@@ -18,17 +18,18 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(Catch2)
 
-add_library(cpp_fun
-  src/vector.cpp
-)
+# add_library(cpp_fun
+# )
 
-target_include_directories(cpp_fun PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+# target_include_directories(cpp_fun PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 add_executable(unit_tests
   src/vector_test.cpp
 )
 
-target_link_libraries(unit_tests PRIVATE cpp_fun Catch2::Catch2WithMain)
+target_link_libraries(unit_tests PRIVATE
+  Catch2::Catch2WithMain
+)
 
 list(APPEND CMAKE_MODULE_PATH ${catch2_SOURCE_DIR}/extras)
 include(CTest)
