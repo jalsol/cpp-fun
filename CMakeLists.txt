@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.28)
 
-set(CMAKE_C_COMPILER clang-18)
-set(CMAKE_CXX_COMPILER clang++-18)
+set(CMAKE_C_COMPILER clang)
+set(CMAKE_CXX_COMPILER clang++)
 
 project(cpp_fun LANGUAGES CXX)
 
@@ -25,6 +25,7 @@ FetchContent_MakeAvailable(Catch2)
 
 add_executable(unit_tests
   src/vector_test.cpp
+  src/unique_ptr_test.cpp
 )
 
 target_link_libraries(unit_tests PRIVATE
