@@ -25,7 +25,7 @@ public:
       data_ = alloc_.allocate(capacity_);
 
       try {
-        std::uninitialized_default_construct_n(data_, count);
+        std::uninitialized_value_construct_n(data_, count);
       } catch (...) {
         alloc_.deallocate(data_, capacity_);
         throw;
