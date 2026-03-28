@@ -26,6 +26,8 @@ FetchContent_MakeAvailable(Catch2)
 add_executable(unit_tests
   src/vector_test.cpp
   src/unique_ptr_test.cpp
+  src/shared_ptr_test.cpp
+  src/weak_ptr_test.cpp
 )
 
 target_link_libraries(unit_tests PRIVATE
