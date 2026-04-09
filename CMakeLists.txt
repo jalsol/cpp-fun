@@ -28,7 +28,10 @@ add_executable(unit_tests
   src/unique_ptr_test.cpp
   src/shared_ptr_test.cpp
   src/weak_ptr_test.cpp
+  src/ranges_test.cpp
 )
+
+target_include_directories(unit_tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 target_link_libraries(unit_tests PRIVATE
   Catch2::Catch2WithMain
